@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../utils/assets.dart';
+import '../utils/theme.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -32,7 +33,6 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: pages[selectedPage],
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
         selectedFontSize: 0,
         unselectedFontSize: 0,
         currentIndex: selectedPage,
@@ -41,27 +41,27 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: AppIcons.home.svgPicture(),
             label: '',
-            activeIcon: AppIcons.home.svgPicture(color: const Color.fromRGBO(3, 110, 253, 1)),
+            activeIcon: AppIcons.home.svgPicture(color: AppColors.primary),
           ),
           BottomNavigationBarItem(
-            icon: AppIcons.heart.svgPicture(color: const Color.fromRGBO(112, 123, 129, 1)),
+            icon: AppIcons.heart.svgPicture(color: AppColors.darkGrey),
             label: '',
-            activeIcon: AppIcons.heart.svgPicture(color: const Color.fromRGBO(3, 110, 253, 1)),
+            activeIcon: AppIcons.heart.svgPicture(color: AppColors.primary),
           ),
           BottomNavigationBarItem(
-            icon: AppIcons.bag.svgPicture(color: const Color.fromRGBO(112, 123, 129, 1)),
+            icon: AppIcons.bag.svgPicture(color: AppColors.darkGrey),
             label: '',
-            activeIcon: AppIcons.bag.svgPicture(color: const Color.fromRGBO(3, 110, 253, 1)),
+            activeIcon: AppIcons.bag.svgPicture(color: AppColors.primary),
           ),
           BottomNavigationBarItem(
             icon: AppIcons.search.svgPicture(),
             label: '',
-            activeIcon: AppIcons.search.svgPicture(color: const Color.fromRGBO(3, 110, 253, 1)),
+            activeIcon: AppIcons.search.svgPicture(color: AppColors.primary),
           ),
           BottomNavigationBarItem(
             icon: AppIcons.profile.svgPicture(),
             label: '',
-            activeIcon: AppIcons.profile.svgPicture(color: const Color.fromRGBO(3, 110, 253, 1)),
+            activeIcon: AppIcons.profile.svgPicture(color: AppColors.primary),
           ),
         ],
       ),
