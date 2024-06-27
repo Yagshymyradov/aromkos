@@ -1,3 +1,4 @@
+import 'package:aromkos/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/assets.dart';
@@ -21,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   List<Widget> pages = [
-    const Center(child: Text('Screen1')),
+    const Home(),
     const Center(child: Text('Screen2')),
     const Center(child: Text('Screen3')),
     const Center(child: Text('Screen4')),

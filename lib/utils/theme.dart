@@ -8,8 +8,54 @@ class AppTheme {
     brightness: Brightness.light,
     scaffoldBackgroundColor: const Color.fromRGBO(247, 247, 249, 1),
     appBarTheme: const AppBarTheme(color: Color.fromRGBO(247, 247, 249, 1)),
+    iconButtonTheme: const IconButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: WidgetStatePropertyAll(AppColors.white),
+      ),
+    ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
+      backgroundColor: AppColors.white,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: const WidgetStatePropertyAll(AppColors.primary),
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(6),
+          ),
+        ),
+        elevation: const WidgetStatePropertyAll(0),
+      ),
+    ),
+    textButtonTheme: const TextButtonThemeData(
+        style: ButtonStyle(
+      minimumSize: WidgetStatePropertyAll(Size(50, 25)),
+    )),
+    textTheme: const TextTheme(
+      titleLarge: TextStyle(
+        fontSize: 32,
+        fontWeight: FontWeight.w700,
+      ),
+      titleSmall: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      ),
+      bodySmall: TextStyle(
+        color: AppColors.white,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+      ),
+      labelSmall: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        color: AppColors.primary,
+      ),
+      displaySmall: TextStyle(
+        fontSize: 14,
+        color: AppColors.dark,
+        fontWeight: FontWeight.w500,
+      ),
     ),
   );
 }
@@ -19,6 +65,8 @@ class AppColors {
 
   static const white = Colors.white;
   static const darkGrey = Color.fromRGBO(112, 123, 129, 1);
+  static const darkerGrey = Color.fromRGBO(106, 106, 106, 1);
   static const primary = Color.fromRGBO(3, 110, 253, 1);
+  static const dark = Color.fromRGBO(43, 43, 43, 1);
   static const black = Colors.black;
 }
