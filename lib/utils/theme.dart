@@ -29,13 +29,19 @@ class AppTheme {
       ),
     ),
     textButtonTheme: const TextButtonThemeData(
-        style: ButtonStyle(
-      minimumSize: WidgetStatePropertyAll(Size(50, 25)),
-    )),
+      style: ButtonStyle(
+        minimumSize: WidgetStatePropertyAll(Size(50, 25)),
+      ),
+    ),
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.w700,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 26,
+        fontWeight: FontWeight.w700,
+        color: AppColors.dark,
       ),
       titleSmall: TextStyle(
         fontSize: 16,
@@ -55,6 +61,11 @@ class AppTheme {
         fontSize: 14,
         color: AppColors.dark,
         fontWeight: FontWeight.w500,
+      ),
+      bodyMedium: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 14,
+        color: AppColors.darkGrey,
       ),
     ),
   );
