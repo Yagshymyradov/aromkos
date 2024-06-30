@@ -1,8 +1,9 @@
-import 'package:aromkos/screens/home/home.dart';
+import 'home/home.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/assets.dart';
 import '../utils/theme.dart';
+import 'favourite/favourite.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -23,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
 
   List<Widget> pages = [
     const Home(),
-    const Center(child: Text('Screen2')),
+    const Favourite(),
     const Center(child: Text('Screen3')),
     const Center(child: Text('Screen4')),
     const Center(child: Text('Screen5')),

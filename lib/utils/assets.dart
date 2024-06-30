@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 enum AppIcons {
+  heartFilled('heart-filled'),
   profile('profile'),
   search('search'),
   bag('bag'),

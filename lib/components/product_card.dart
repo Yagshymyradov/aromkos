@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../screens/details/details.dart';
+import '../utils/assets.dart';
 import '../utils/extensions.dart';
 import '../utils/navigation.dart';
 import '../utils/theme.dart';
@@ -17,7 +18,7 @@ class ProductCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(16),
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
-        onTap: ()=> navigateToScreen(context, const Details()),
+        onTap: () => navigateToScreen(context, const Details()),
         child: Stack(
           children: [
             Padding(
@@ -25,16 +26,25 @@ class ProductCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(height: 15),
                   const Icon(Icons.ice_skating, size: 150),
                   const SizedBox(height: 12),
                   Text('BEST SELLER', style: textTheme.labelSmall),
                   Text(
-                    'BEST SELLER',
+                    'Nike Jordan',
                     style: textTheme.titleSmall?.copyWith(color: AppColors.darkerGrey),
                   ),
-                  Text('BEST SELLER', style: textTheme.displaySmall),
+                  Text(r'$302.00', style: textTheme.displaySmall),
                 ],
               ),
+            ),
+            IconButton(
+              style: const ButtonStyle(
+                maximumSize: WidgetStatePropertyAll(Size(30, 30)),
+                minimumSize: WidgetStatePropertyAll(Size(28, 28)),
+              ),
+              onPressed: () {},
+              icon: AppIcons.heart.svgPicture(),
             ),
             const Positioned(
               bottom: 0,
