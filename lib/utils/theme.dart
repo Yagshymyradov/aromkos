@@ -67,6 +67,11 @@ class AppTheme {
         fontSize: 14,
         color: AppColors.darkGrey,
       ),
+      headlineSmall: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        color: AppColors.darkGrey,
+      ),
     ),
   );
 }
@@ -75,9 +80,11 @@ class AppColors {
   AppColors._();
 
   static const white = Colors.white;
+  static const light = Color.fromRGBO(247, 247, 249, 1);
   static const darkGrey = Color.fromRGBO(112, 123, 129, 1);
   static const darkerGrey = Color.fromRGBO(106, 106, 106, 1);
   static const primary = Color.fromRGBO(3, 110, 253, 1);
+  static const red = Color.fromRGBO(255, 25, 0, 1);
   static const dark = Color.fromRGBO(43, 43, 43, 1);
   static const black = Colors.black;
 }

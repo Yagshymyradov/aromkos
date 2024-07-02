@@ -1,9 +1,10 @@
-import 'home/home.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/assets.dart';
 import '../utils/theme.dart';
+import 'cart/cart.dart';
 import 'favourite/favourite.dart';
+import 'home/home.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -25,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> pages = [
     const Home(),
     const Favourite(),
-    const Center(child: Text('Screen3')),
+    const Cart(),
     const Center(child: Text('Screen4')),
     const Center(child: Text('Screen5')),
   ];
