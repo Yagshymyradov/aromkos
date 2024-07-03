@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../screens/cart/checkout/checkout_screen.dart';
 import '../utils/extensions.dart';
+import '../utils/navigation.dart';
 import '../utils/theme.dart';
 
-class Checkout extends StatelessWidget {
-  const Checkout({super.key});
+class CheckoutButton extends StatelessWidget {
+  const CheckoutButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,7 @@ class Checkout extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => navigateToScreen(context, const CheckoutScreen()),
               style: const ButtonStyle(
                 minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50)),
               ),

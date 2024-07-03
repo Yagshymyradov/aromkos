@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../components/checkout.dart';
+import '../../components/checkout_button.dart';
 import 'widgets/slidable_list_tile.dart';
 
 class Cart extends StatelessWidget {
@@ -26,7 +26,7 @@ class Cart extends StatelessWidget {
             child: Column(
               children: [
                 Spacer(),
-                Checkout(),
+                CheckoutButton(),
               ],
             ),
           ),

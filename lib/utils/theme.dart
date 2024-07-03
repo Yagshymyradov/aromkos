@@ -33,6 +33,16 @@ class AppTheme {
         minimumSize: WidgetStatePropertyAll(Size(50, 25)),
       ),
     ),
+    inputDecorationTheme: const InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColors.darkGrey),
+      ),
+      hintStyle: TextStyle(
+        fontSize: 13,
+        fontWeight: FontWeight.w400,
+        color: AppColors.darkerGrey,
+      ),
+    ),
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         fontSize: 32,
