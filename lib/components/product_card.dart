@@ -14,7 +14,7 @@ class ProductCard extends StatelessWidget {
     final textTheme = context.textTheme;
 
     return Material(
-      color: Colors.white,
+      color: AppColors.dark,
       borderRadius: BorderRadius.circular(16),
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
@@ -32,7 +32,7 @@ class ProductCard extends StatelessWidget {
                   Text('BEST SELLER', style: textTheme.labelSmall),
                   Text(
                     'Nike Jordan',
-                    style: textTheme.titleSmall?.copyWith(color: AppColors.darkerGrey),
+                    style: textTheme.titleSmall?.copyWith(color: AppColors.darkGrey),
                   ),
                   Text(r'$302.00', style: textTheme.displaySmall),
                 ],
@@ -44,7 +44,7 @@ class ProductCard extends StatelessWidget {
                 minimumSize: WidgetStatePropertyAll(Size(28, 28)),
               ),
               onPressed: () {},
-              icon: AppIcons.heart.svgPicture(),
+              icon: AppIcons.heart.svgPicture(color: AppColors.white),
             ),
             const Positioned(
               bottom: 0,

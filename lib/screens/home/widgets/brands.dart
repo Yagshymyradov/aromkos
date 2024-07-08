@@ -1,5 +1,7 @@
-import 'package:aromkos/utils/extensions.dart';
+import '../../../utils/extensions.dart';
 import 'package:flutter/material.dart';
+
+import '../../../utils/theme.dart';
 
 class Brands extends StatelessWidget {
   const Brands({super.key});
@@ -29,11 +31,11 @@ class Brands extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
-                    color: Colors.white,
+                    color: AppColors.dark,
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 31),
-                    child: Center(child: Text('BOSS')),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 31),
+                    child: Center(child: Text('BOSS', style: textTheme.displayMedium)),
                   ),
                 ),
               ),

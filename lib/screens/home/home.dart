@@ -1,10 +1,10 @@
-import 'package:aromkos/screens/home/widgets/new.dart';
-import 'package:aromkos/screens/home/widgets/select_category.dart';
-import 'package:aromkos/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
+import '../../utils/extensions.dart';
+import 'widgets/banner.dart';
 import 'widgets/brands.dart';
 import 'widgets/popular.dart';
+import 'widgets/select_category.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  bool selectedWomenCategory = true;
+  PersonalCategories personalCategories = PersonalCategories.women;
 
   void updateUi() {
     setState(() {
@@ -22,13 +22,8 @@ class _HomeState extends State<Home> {
     });
   }
 
-  void onWomenTap() {
-    selectedWomenCategory = true;
-    updateUi();
-  }
-
-  void onMenTap() {
-    selectedWomenCategory = false;
+  void onSelectedCategory(PersonalCategories category){
+    personalCategories = category;
     updateUi();
   }
 
@@ -39,26 +34,20 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Explore', style: textTheme.titleLarge),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.shop),
-          ),
-          const SizedBox(width: 12),
-        ],
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         children: [
           SelectCategory(
-            selectedWomen: selectedWomenCategory,
-            onWomenTap: onWomenTap,
-            onMenTap: onMenTap,
+            onPressed: onSelectedCategory,
+            selectedPersonal: personalCategories,
           ),
+          const SizedBox(height: 20),
+          const BannerBlock(),
           const SizedBox(height: 10),
           const Brands(),
+          const SizedBox(height: 10),
           const Popular(),
-          const New()
         ],
       ),
     );

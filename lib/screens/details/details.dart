@@ -51,41 +51,33 @@ class Details extends StatelessWidget {
             left: 0,
             right: 0,
             bottom: 0,
-            child: ColoredBox(
-              color: AppColors.white,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Flexible(
-                      flex: 2,
-                      child: IconButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: WidgetStatePropertyAll(
-                            AppColors.darkGrey.withOpacity(0.1),
-                          ),
-                        ),
-                        icon: AppIcons.heart.svgPicture(),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Flexible(
+                    flex: 2,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: AppIcons.heart.svgPicture(),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 3,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AppIcons.bag.svgPicture(),
+                          const SizedBox(width: 10),
+                          Text('Add to Cart', style: textTheme.bodySmall),
+                        ],
                       ),
                     ),
-                    Flexible(
-                      flex: 3,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            AppIcons.bag.svgPicture(),
-                            const SizedBox(width: 10),
-                            Text('Add to Cart', style: textTheme.bodySmall),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

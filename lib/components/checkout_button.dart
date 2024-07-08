@@ -13,7 +13,7 @@ class CheckoutButton extends StatelessWidget {
     final textTheme = context.textTheme;
 
     return ColoredBox(
-      color: AppColors.white,
+      color: AppColors.dark,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
         child: Column(

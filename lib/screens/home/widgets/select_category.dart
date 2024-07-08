@@ -1,17 +1,37 @@
-import 'package:aromkos/utils/extensions.dart';
-import 'package:aromkos/utils/theme.dart';
 import 'package:flutter/material.dart';
 
+import '../../../utils/extensions.dart';
+import '../../../utils/theme.dart';
+
+enum PersonalCategories {
+  women,
+  man,
+  child;
+
+  String get asValue {
+    switch (this) {
+      case PersonalCategories.women:
+        return 'Ayal';
+      case PersonalCategories.man:
+        return 'Erkek';
+      case PersonalCategories.child:
+        return 'Caga';
+    }
+  }
+
+  Color asColor(bool selected) {
+    return selected ? AppColors.primary : AppColors.white;
+  }
+}
+
 class SelectCategory extends StatelessWidget {
-  final bool selectedWomen;
-  final VoidCallback onWomenTap;
-  final VoidCallback onMenTap;
+  final void Function(PersonalCategories) onPressed;
+  final PersonalCategories selectedPersonal;
 
   const SelectCategory({
     super.key,
-    required this.selectedWomen,
-    required this.onWomenTap,
-    required this.onMenTap,
+    required this.onPressed,
+    required this.selectedPersonal,
   });
 
   @override
@@ -23,42 +43,29 @@ class SelectCategory extends StatelessWidget {
         Text('Select Category', style: textTheme.titleSmall),
         const SizedBox(height: 14),
         Row(
-          children: [
-            Expanded(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(
-                    selectedWomen ? AppColors.primary : AppColors.white,
+          children: PersonalCategories.values
+              .mapIndexed(
+                (e, i) => Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: i == 0 ? 0 : 8),
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(
+                          e.asColor(selectedPersonal == e),
+                        ),
+                      ),
+                      onPressed: ()=> onPressed(e),
+                      child: Text(
+                        e.asValue,
+                        style: textTheme.bodySmall?.copyWith(
+                            color: e.asColor(selectedPersonal != e),
+                            ),
+                      ),
+                    ),
                   ),
                 ),
-                onPressed: onWomenTap,
-                child: Text(
-                  'Ayal',
-                  style: textTheme.bodySmall?.copyWith(
-                    color: selectedWomen ? AppColors.white : AppColors.black,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: onMenTap,
-                style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(
-                    selectedWomen ? AppColors.white : AppColors.primary,
-                  ),
-                ),
-                child: Text(
-                  'Erkek',
-                  style: textTheme.bodySmall?.copyWith(
-                    color: selectedWomen ? AppColors.black : AppColors.white,
-                  ),
-                ),
-              ),
-            ),
-            const Expanded(child: SizedBox()),
-          ],
+              )
+              .toList(growable: false),
         ),
       ],
     );

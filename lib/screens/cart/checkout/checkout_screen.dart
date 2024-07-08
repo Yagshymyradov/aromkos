@@ -27,7 +27,7 @@ class CheckoutScreen extends StatelessWidget {
             child: DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                color: AppColors.white,
+                color: AppColors.dark,
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
@@ -50,6 +50,12 @@ class CheckoutScreen extends StatelessWidget {
                     const SizedBox(height: 10),
                     const FieldText(
                       hintText: 'Write address',
+                    ),
+                    const SizedBox(height: 20),
+                    Text('Promo code', style: textTheme.titleSmall),
+                    const SizedBox(height: 10),
+                    const FieldText(
+                      hintText: 'Write promo code',
                     ),
                   ],
                 ),

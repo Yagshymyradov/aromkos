@@ -85,7 +85,7 @@ class SlidableListTile extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: AppColors.white,
+          color: AppColors.dark,
         ),
         child: Row(
           children: [

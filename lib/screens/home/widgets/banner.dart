@@ -1,30 +1,19 @@
-import 'package:aromkos/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
+import '../../../utils/extensions.dart';
 import '../../../utils/theme.dart';
 
-class New extends StatelessWidget {
-  const New({super.key});
+class BannerBlock extends StatelessWidget {
+  const BannerBlock({super.key});
 
   @override
   Widget build(BuildContext context) {
     final textTheme = context.textTheme;
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('New', style: textTheme.titleSmall),
-            TextButton(
-              onPressed: () {},
-              child: Text('See all', style: textTheme.labelSmall),
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
         DecoratedBox(
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: AppColors.dark,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Padding(
@@ -44,7 +33,6 @@ class New extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 20),
       ],
     );
   }
